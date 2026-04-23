@@ -1,3 +1,7 @@
 Implementation_Context.md
 dev-steps.md
 CLAUDE.md
+venv/
+requirements.txt
+models/
+__pycache__/
