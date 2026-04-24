@@ -42,7 +42,8 @@ class FSMAutoencoder(nn.Module):
 
 
 def train_autoencoder(model, train_data, val_data,
-                      epochs=50, batch_size=64, lr=1e-3, device="cpu"):
+                      epochs=50, batch_size=64, lr=1e-3, device="cuda",
+                      print_every=10):
     """Train the autoencoder on normal windows (input == target).
 
     Args:
@@ -95,7 +96,7 @@ def train_autoencoder(model, train_data, val_data,
             val_loss = criterion(val_recon, val_tensor).item()
         val_losses.append(val_loss)
 
-        if (epoch + 1) % 10 == 0 or epoch == 0:
+        if print_every and ((epoch + 1) % print_every == 0 or epoch == 0):
             print(f"  Epoch {epoch+1:>3}/{epochs}"
                   f"  train_loss={train_loss:.6f}"
                   f"  val_loss={val_loss:.6f}")
@@ -103,7 +104,7 @@ def train_autoencoder(model, train_data, val_data,
     return train_losses, val_losses
 
 
-def compute_reconstruction_errors(model, data, device="cpu"):
+def compute_reconstruction_errors(model, data, device="cuda"):
     """Compute per-window mean BCE reconstruction error.
 
     Args:
