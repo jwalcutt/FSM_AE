@@ -1,0 +1,10 @@
+FSM,WindowSize,F1,AUC
+Traffic Light,4,1.000,1.000
+Traffic Light,8,1.000,1.000
+Traffic Light,12,1.000,1.000
+Bit-Pattern,6,0.814,0.940
+Bit-Pattern,10,0.871,0.956
+Bit-Pattern,14,0.893,0.961
+Vending Machine,6,0.920,0.980
+Vending Machine,10,0.897,0.987
+Vending Machine,14,0.915,0.990

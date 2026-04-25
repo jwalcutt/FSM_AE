@@ -1,0 +1,26 @@
+% Window-size sensitivity analysis. Source: evaluate.py console output, run on
+% 2026-04-24. The script does not currently persist these numbers to disk.
+\begin{table}[t]
+\centering
+\caption{Autoencoder detection performance as a function of sliding-window
+length $N$. Each row reports overall F1 and AUC on the labeled test set,
+re-trained at the indicated $N$.}
+\label{tab:sensitivity}
+\begin{tabular}{lccc}
+\hline
+FSM & $N$ & F1 & AUC \\
+\hline
+Traffic Light    &  4 & 1.000 & 1.000 \\
+                 &  8 & 1.000 & 1.000 \\
+                 & 12 & 1.000 & 1.000 \\
+\hline
+Bit-Pattern      &  6 & 0.814 & 0.940 \\
+                 & 10 & 0.871 & 0.956 \\
+                 & 14 & 0.893 & 0.961 \\
+\hline
+Vending Machine  &  6 & 0.920 & 0.980 \\
+                 & 10 & 0.897 & 0.987 \\
+                 & 14 & 0.915 & 0.990 \\
+\hline
+\end{tabular}
+\end{table}

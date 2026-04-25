@@ -1,0 +1,108 @@
+============================================================
+  Traffic Light  (window_size=8, input_dim=32)
+============================================================
+  Building dataset...
+  Train: (300303, 32)  Val: (75076, 32)  Test: (108740, 32)
+  Loaded existing model from models/traffic_light_ae.pt
+  Threshold tau = 0.000000
+  AE overall  P=1.000  R=1.000  F1=1.000  AUC=1.000
+    AE stuck_at        P=1.000 R=1.000 F1=1.000 AUC=1.000
+    AE transition      P=1.000 R=1.000 F1=1.000 AUC=1.000
+    AE perturbation    P=1.000 R=1.000 F1=1.000 AUC=1.000
+  WL overall  P=1.000  R=1.000  F1=1.000
+    WL stuck_at        P=1.000 R=1.000 F1=1.000
+    WL transition      P=1.000 R=1.000 F1=1.000
+    WL perturbation    P=1.000 R=1.000 F1=1.000
+
+  AE confusion matrix:
+[[92686     0]
+ [    0 16054]]
+  WL confusion matrix:
+[[92686     0]
+ [    0 16054]]
+  Saved figures/roc_traffic_light.png
+  Saved figures/error_hist_traffic_light.png
+
+============================================================
+  Bit-Pattern  (window_size=10, input_dim=50)
+============================================================
+  Building dataset...
+  Train: (151440, 50)  Val: (37861, 50)  Test: (55155, 50)
+  Loaded existing model from models/bit_pattern_ae.pt
+  Threshold tau = 0.000000
+  AE overall  P=0.835  R=0.913  F1=0.872  AUC=0.953
+    AE stuck_at        P=0.536 R=0.775 F1=0.633 AUC=0.873
+    AE transition      P=0.573 R=0.924 F1=0.708 AUC=0.960
+    AE perturbation    P=0.811 R=0.961 F1=0.879 AUC=0.979
+  WL overall  P=1.000  R=0.908  F1=0.952
+    WL stuck_at        P=1.000 R=0.767 F1=0.868
+    WL transition      P=1.000 R=0.917 F1=0.957
+    WL perturbation    P=1.000 R=0.957 F1=0.978
+
+  AE confusion matrix:
+[[41095  2151]
+ [ 1033 10876]]
+  WL confusion matrix:
+[[43246     0]
+ [ 1097 10812]]
+  Saved figures/roc_bit_pattern.png
+  Saved figures/error_hist_bit_pattern.png
+
+============================================================
+  Vending Machine  (window_size=10, input_dim=60)
+============================================================
+  Building dataset...
+  Train: (235524, 60)  Val: (58881, 60)  Test: (84023, 60)
+  Loaded existing model from models/vending_machine_ae.pt
+  Threshold tau = 1.666667
+  AE overall  P=1.000  R=0.930  F1=0.964  AUC=0.982
+    AE stuck_at        P=1.000 R=0.941 F1=0.970 AUC=0.991
+    AE transition      P=1.000 R=0.896 F1=0.945 AUC=0.971
+    AE perturbation    P=1.000 R=0.935 F1=0.967 AUC=0.983
+  WL overall  P=1.000  R=0.894  F1=0.944
+    WL stuck_at        P=1.000 R=0.744 F1=0.853
+    WL transition      P=1.000 R=0.908 F1=0.952
+    WL perturbation    P=1.000 R=0.935 F1=0.966
+
+  AE confusion matrix:
+[[67777     0]
+ [ 1144 15102]]
+  WL confusion matrix:
+[[67777     0]
+ [ 1724 14522]]
+  Saved figures/roc_vending_machine.png
+  Saved figures/error_hist_vending_machine.png
+
+==============================================================================
+COMBINED RESULTS TABLE
+==============================================================================
+FSM                  Fault Type        WL P   WL R  WL F1    AE P   AE R  AE F1  AE AUC
+---------------------------------------------------------------------------------------
+Traffic Light        stuck_at         1.000  1.000  1.000   1.000  1.000  1.000   1.000
+Traffic Light        transition       1.000  1.000  1.000   1.000  1.000  1.000   1.000
+Traffic Light        perturbation     1.000  1.000  1.000   1.000  1.000  1.000   1.000
+Bit-Pattern          stuck_at         1.000  0.767  0.868   0.536  0.775  0.633   0.873
+Bit-Pattern          transition       1.000  0.917  0.957   0.573  0.924  0.708   0.960
+Bit-Pattern          perturbation     1.000  0.957  0.978   0.811  0.961  0.879   0.979
+Vending Machine      stuck_at         1.000  0.744  0.853   1.000  0.941  0.970   0.991
+Vending Machine      transition       1.000  0.908  0.952   1.000  0.896  0.945   0.971
+Vending Machine      perturbation     1.000  0.935  0.966   1.000  0.935  0.967   0.983
+
+==============================================================================
+WINDOW SIZE SENSITIVITY ANALYSIS
+==============================================================================
+
+  Traffic Light sensitivity  (N = [4, 8, 12])
+    N= 4:  F1=1.000  AUC=1.000
+    N= 8:  F1=1.000  AUC=1.000
+    N=12:  F1=1.000  AUC=1.000
+
+  Bit-Pattern sensitivity  (N = [6, 10, 14])
+    N= 6:  F1=0.814  AUC=0.940
+    N=10:  F1=0.871  AUC=0.956
+    N=14:  F1=0.893  AUC=0.961
+
+  Vending Machine sensitivity  (N = [6, 10, 14])
+    N= 6:  F1=0.920  AUC=0.980
+    N=10:  F1=0.897  AUC=0.987
+    N=14:  F1=0.915  AUC=0.990
