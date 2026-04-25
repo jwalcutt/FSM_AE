@@ -183,7 +183,7 @@ def train_and_evaluate(name, cfg, seed=42, force_retrain=False):
 
     # --- Threshold ---
     val_errors = compute_reconstruction_errors(model, ds["val"], device=DEVICE)
-    tau = select_threshold(val_errors, percentile=95)
+    tau = select_threshold(val_errors, percentile=99)
     print(f"  Threshold tau = {tau:.6f}")
 
     # --- AE evaluation ---
@@ -202,7 +202,7 @@ def train_and_evaluate(name, cfg, seed=42, force_retrain=False):
             _train_fresh(model, ds)
             trained_this_run = True
             val_errors = compute_reconstruction_errors(model, ds["val"], device=DEVICE)
-            tau = select_threshold(val_errors, percentile=95)
+            tau = select_threshold(val_errors, percentile=99)
             print(f"  New threshold tau = {tau:.6f}")
             test_errors = compute_reconstruction_errors(model, ds["test_windows"], device=DEVICE)
             ae_preds = (test_errors > tau).astype(np.int32)
@@ -327,7 +327,7 @@ def sensitivity_analysis(name, cfg, seed=42):
                           device=DEVICE, print_every=0)
 
         val_err = compute_reconstruction_errors(model, ds["val"], device=DEVICE)
-        tau = select_threshold(val_err, percentile=95)
+        tau = select_threshold(val_err, percentile=99)
 
         test_err = compute_reconstruction_errors(model, ds["test_windows"], device=DEVICE)
         preds = (test_err > tau).astype(np.int32)

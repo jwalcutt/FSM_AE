@@ -476,7 +476,7 @@ def _load_model_and_errors(name, cfg, seed=42):
                        window_size=ws, seed=seed)
 
     val_err = compute_reconstruction_errors(model, ds["val"], device=DEVICE)
-    tau = select_threshold(val_err, percentile=95)
+    tau = select_threshold(val_err, percentile=99)
 
     test_err = compute_reconstruction_errors(
         model, ds["test_windows"], device=DEVICE)
