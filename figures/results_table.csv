@@ -1,0 +1,10 @@
+FSM,FaultType,WL_Precision,WL_Recall,WL_F1,AE_Precision,AE_Recall,AE_F1,AE_AUC
+Traffic Light,Stuck-At,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000
+Traffic Light,Transition,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000
+Traffic Light,Perturbation,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000
+Bit-Pattern Detector,Stuck-At,1.0000,0.7667,0.8680,0.5357,0.7746,0.6334,0.8734
+Bit-Pattern Detector,Transition,1.0000,0.9170,0.9567,0.5732,0.9241,0.7075,0.9601
+Bit-Pattern Detector,Perturbation,1.0000,0.9568,0.9779,0.8109,0.9606,0.8794,0.9794
+Vending Machine,Stuck-At,1.0000,0.7442,0.8533,1.0000,0.9410,0.9696,0.9909
+Vending Machine,Transition,1.0000,0.9080,0.9518,1.0000,0.8959,0.9451,0.9715
+Vending Machine,Perturbation,1.0000,0.9346,0.9662,1.0000,0.9353,0.9666,0.9828

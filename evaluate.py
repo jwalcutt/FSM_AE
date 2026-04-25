@@ -30,6 +30,7 @@ from data_generation import (
     FAULT_NORMAL, FAULT_STUCK_AT, FAULT_TRANSITION, FAULT_PERTURBATION,
     FAULT_TYPE_NAMES,
 )
+
 from autoencoder import (
     FSMAutoencoder,
     train_autoencoder,
@@ -378,12 +379,6 @@ def main():
     print(f"{'=' * 78}")
     for name, cfg in FSM_CONFIGS.items():
         sensitivity_analysis(name, cfg)
-
-    # --- Check off Phase 4 in dev-steps.md ---
-    print(f"\n{'=' * 60}")
-    print("PHASE 4 COMPLETE")
-    print(f"{'=' * 60}")
-
 
 if __name__ == "__main__":
     main()
