@@ -2,8 +2,10 @@ Implementation_Context.md
 dev-steps.md
 CLAUDE.md
 Writing_Guidelines.md
+sources.md
 venv/
 requirements.txt
+paper.*
 models/
 __pycache__/
 *.pdf
